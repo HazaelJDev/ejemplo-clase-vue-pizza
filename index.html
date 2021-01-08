@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pizza Vue</title>
+    <link href="./src/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./src/css/app.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./src/img/logo1.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <!--cabecera-->
+            <div class="row">
+                <div class="col-3" id="contLogo">
+                    <img :src="header.logo" alt="logo" id="logo">
+                </div>
+                <div class="col-6" id="titulo">
+                    <h1>{{header.titulo}}</h1>
+                </div>
+                <div class="col-3" id="sesion">
+                    <p>{{header.sesion}}</p>
+                </div>
+            </div>
+            <!--Navbar-->
+            <nav class="row">
+                <li class="col-12" id="menu">
+                    <ul class="itemMenu" v-for="item of menu">
+                        {{item}}
+                    </ul>
+                </li>
+            </nav>
+        </header>
+        <!--main-->
+        <main class="row">
+            <span class="col-3" id="banner">
+                <img :src="img.banner" alt="banner">
+            </span>
+
+            <div class="col-9"  id="contArt">
+                <div class="row" id="articulos">
+                    <div class="card itemArticulo" style="width: 18rem;" v-for="articulo of articulos">
+                        <img :src="articulo.img" class="card-img-top imgArt" :alt="articulo.nombre">
+                        <div class="card-body">
+                            <h5 class="card-title">{{articulo.nombre}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{articulo.precio}}</h6>
+                            <p class="card-text">{{articulo.ingredientes}}</p>
+                         </div>
+                    </div>              
+            </div>
+        </main>
+        <!--Practica-->
+        <div class="row">
+            <div class="col-6" id="p1">
+                <img :src="img.img1" alt="imagen1">
+                <h5>{{practica.text1}}</h5>
+            </div>
+            <div class="col-6" id="p2">
+                <img :src="img.img2" alt="imagen1">
+                <h5>{{practica.text2}}</h5>
+            </div>
+        </div>
+        <!--footer-->
+        <footer>
+            <div class="row">
+                <div class="col-12">
+                    <h4>{{footer}}</h4>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!--VUE -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="./src/js/app.js"></script>
+</body>
+
+</html>
